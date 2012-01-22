@@ -5,7 +5,6 @@
 #
 # How many routes are there through a 20x20 grid? 
 #
-#
 # This one stumped me for a bit, until clued into 
 # on a 2x2 you'll always go right twice (RR) and 
 # down twice (DD), so we're just working through
@@ -22,35 +21,26 @@
 #
 # insight -- for a grid of NxN, the question is equivalent
 # to "How many ways can you sum numbers that equal 2N?"
+# correction -- where any number is less than N.
 #
+# doh. pascal triangle!
 #
-#
+
 import math,sys
 
-def bitlist(number,size):
-  if number.bit_length() > size:
-    print "Error: number needs more bits than size specified"
-    sys.exit(1)
-  bits = '{0:0' + str(size) + 'b}'
-  return list(bits.format(number))
+grid_length = 20
 
-grid_width = 20
+triangle = [1]
 
-path_count = 0
+def iterate_triangle(x):
+  new_list = [1]
+  for i in range(0,len(x)):
+    if i == len(x) - 1:
+      new_list.append(x[-1])
+      return new_list
+    new_list.append((x[i] + x[i + 1]))
 
-i = 1
+for x in range(0,(grid_length * 2)):
+  triangle = iterate_triangle(triangle)
 
-while i:
-  right = 0
-  down = 0
-  test_path = bitlist(i,(2*grid_width))
-  for node in test_path:
-    if int(node) == 0:
-      right += 1
-    if int(node) == 1:
-      down += 1
-  if right == down:
-    path_count += 1
-    print test_path
-    print path_count
-  i = i + 1
+print sorted(list(set(triangle)))[-1]
