@@ -17,7 +17,7 @@ def factors(x):
 def is_prime(x):
   for product in range(2, math.trunc(math.sqrt(x))):
     if x % product == 0:
-	return False
+    	return False
   return True
 
 for number in factors(600851475143)[::-1]:
