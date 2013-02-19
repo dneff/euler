@@ -113,19 +113,23 @@ for line in fh:
 solution = 0
 
 for game in games:
+  print "---"
   hand_1 = order_hand(game[:5])
   hand_2 = order_hand(game[5:])
-  print hand_1, hand_2
-  if hand_value(hand_1)[0] > hand_value(hand_2)[0]:
-    print "hand 1 wins"
+  print "Player 1: " + " ".join(hand_1)
+  handval1 = hand_value(hand_1)
+  print "Player 2: " + " ".join(hand_2)
+  handval2 = hand_value(hand_2)
+  if handval1[0] > handval2[0]:
+    print "Player 1 wins"
     solution += 1
-  elif hand_value(hand_1)[0] < hand_value(hand_2)[0]:
-    print "hand 2 wins"
-  elif hand_value(hand_1)[1] > hand_value(hand_2)[1]:
-    print "hand 1 wins"
+  elif handval1[0] < handval2[0]:
+    print "Player 2 wins"
+  elif handval1[1] > handval2[1]:
+    print "Player 1 wins"
     solution += 1
-  elif hand_value(hand_1)[1] < hand_value(hand_2)[1]:
-    print "hand 2 wins"
+  elif handval1[1] < handval2[1]:
+    print "Player 2 wins"
   else:
     print "TIE!"
 
