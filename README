@@ -1,8 +1,16 @@
-Progress on a self-imposed challenge:
+Ah, hubris...
 
-Work through the 366 problems on Project Euler by the end of 2012.
+    Progress on a self-imposed challenge:
 
-1. Work must be done in python
-2. No custom libraries
-3. No googling formulas until you've solved the problem
-4. Solution must execute in under 300 seconds
+    Work through the 366 problems on Project Euler by the end of 2012.
+
+        1. Work must be done in python
+        2. No custom libraries
+        3. No googling formulas until you've solved the problem
+        4. Solution must execute in under 300 seconds
+        
+I missed the deadline, but I'm still going strong. As for the other rules, 3 can be brutal. Quite a few euler problems have a optimally elegant solution that's orders of magnitude more efficient than the rest.
+
+One lesson I didn't expect is how consistently I overestimate the time and complexity of solving a puzzle.
+
+This process continues to be very enjoyable.
