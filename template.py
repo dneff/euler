@@ -2,6 +2,7 @@
 # Dan Neff - (dan@neff.cc)
 # Description here
 #
-import math,sys
+from neff import *
+import itertools, math, sys
 
-
+print prime.factors(12000000000000)
